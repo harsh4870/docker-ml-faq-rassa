@@ -1,8 +1,7 @@
 # docker-ml-faq-rassa
 ML FAQ model demo with rasa &amp; Docker 
 
-![image](https://github.com/harsh4870/docker-ml-faq-rassa/assets/15871000/0c83ad02-565d-4c3e-a172-c6e75af9101a)
-
+![Untitled-2022-12-29-1222](https://github.com/harsh4870/docker-ml-faq-rassa/assets/15871000/e2d4064c-3ef9-4640-a488-60c7d48a1608)
 
 #### Init Rasa
 
