@@ -41,5 +41,6 @@ docker run -p 8080:80 rasa-webchat:v1
 
 Open `localhost:8080` in Browser
 
-<img width="1439" alt="Screenshot 2023-06-19 at 12 10 51 PM" src="https://github.com/harsh4870/docker-ml-faq-rassa/assets/15871000/7184fa0c-123d-4719-ac09-b399514d4199">
+<img width="1435" alt="Screenshot 2023-06-20 at 1 12 45 PM" src="https://github.com/harsh4870/docker-ml-faq-rassa/assets/15871000/dbc48574-db67-47e9-9b69-a6b3cce9fbcc">
+
 
