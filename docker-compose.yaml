@@ -2,7 +2,11 @@ version: '3.0'
 services:
   rasa:
     #image: rasa/rasa:3.6.0-full
-    image: harshmanvar/docker-ml-faq-rasa:3.5.2
+    image: europe-west3-docker.pkg.dev/rasa-releases/rasa-pro/rasa-pro:3.9.3
+    environment:
+      RASA_PRO_LICENSE: "" #Replace with original value
+      OPENAI_API_KEY: "" #Replace with original value
+      RASA_DUCKLING_HTTP_URL: localhost:8000
     ports:
       - 5005:5005
     volumes:
