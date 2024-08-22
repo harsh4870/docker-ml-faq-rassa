@@ -6,19 +6,34 @@ ML FAQ model demo with rasa &amp; Docker
 #### Init Rasa
 
 ```
-docker run  -p 5005:5005 -v $(pwd):/app <IMAGE>:3.5.2 init --no-prompt
+docker run -v ./:/app \
+            -e RASA_PRO_LICENSE= "" \ #Add value
+            -e OPENAI_API_KEY= "" \ #Add value
+            -e RASA_DUCKLING_HTTP_URL=localhost:8000 \
+            europe-west3-docker.pkg.dev/rasa-releases/rasa-pro/rasa-pro:3.9.3 \
+            init --template tutorial --no-prompt
 ```
 
 #### Train Model 
 
 ```
-docker run -v $(pwd):/app <IMAGE>:3.5.2 train --domain domain.yml --data data --out models
+docker run -v ./:/app \
+            -e RASA_PRO_LICENSE= "" \ #Add value
+            -e OPENAI_API_KEY= "" \ #Add value
+            -e RASA_DUCKLING_HTTP_URL=localhost:8000 \
+            europe-west3-docker.pkg.dev/rasa-releases/rasa-pro/rasa-pro:3.9.3 \
+            train
 ```
 
 #### Run model 
 
 ```
-docker run -v $(pwd):/app <IMAGE>:3.5.2 shell
+docker run -d -p 5005:5005 -v ./:/app \
+            -e RASA_PRO_LICENSE= "" \ #Add value
+            -e OPENAI_API_KEY= "" \ #Add value
+            -e RASA_DUCKLING_HTTP_URL=localhost:8000 \
+            europe-west3-docker.pkg.dev/rasa-releases/rasa-pro/rasa-pro:3.9.3 \
+            run -m models --enable-api --cors "*" --debug
 ```
 
 ## WebChat
