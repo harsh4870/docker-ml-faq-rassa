@@ -1,34 +1,21 @@
 version: "3.1"
 
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+slots:
+  recipient:
+    type: text
+    mappings:
+      - type: from_llm
+  amount:
+    type: float
+    mappings:
+      - type: from_llm
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_ask_recipient:
+    - text: "Who would you like to send money to?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_ask_amount:
+    - text: "How much money would you like to send?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  utter_transfer_complete:
+    - text: "All done. {amount} has been sent to {recipient}."
